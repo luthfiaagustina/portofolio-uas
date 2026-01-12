@@ -1,0 +1,474 @@
+/* ROOT VARIABLES - Biar Gampang Atur Warna */
+:root {
+    --pink-light: #fff0f3;
+    --pink-accent: #ff85a1;
+    --pink-dark: #f06292;
+    --text-main: #2d3436;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.7);
+    --shadow: 0 10px 30px rgba(240, 98, 146, 0.15);
+}
+
+/* DARK MODE OVERRIDE */
+body.dark-mode {
+    --pink-light: #2d0a15;
+    --text-main: #ffe4e9;
+    --glass: rgba(0, 0, 0, 0.6);
+    --white: #1a1a1a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; cursor: none; }
+
+body { background-color: var(--pink-light); color: var(--text-main); transition: 0.5s; overflow-x: hidden; }
+
+/* PRELOADER */
+#preloader { position: fixed; inset: 0; background: var(--pink-light); z-index: 10000; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.5s ease-out, visibility 0.5s ease-out; }
+.loader-circle { width: 50px; height: 50px; border: 5px solid var(--pink-dark); border-top: 5px solid var(--pink-accent); border-radius: 50%; animation: spin 1s infinite linear; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* CUSTOM CURSOR */
+#cursor-dot { width: 8px; height: 8px; background: var(--pink-dark); position: fixed; border-radius: 50%; pointer-events: none; z-index: 10001; }
+#cursor-outline { width: 30px; height: 30px; border: 2px solid var(--pink-accent); position: fixed; border-radius: 50%; pointer-events: none; z-index: 10001; transition: 0.1s ease-out; }
+
+/* NAVBAR */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(15px); background: var(--glass); border-bottom: 1px solid rgba(255,255,255,0.3); }
+.logo { font-weight: 800; font-size: 1.5rem; color: var(--pink-dark); }
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--pink-dark); }
+#dark-mode-toggle { background: none; border: none; font-size: 1.2rem; color: var(--text-main); cursor: pointer; transition: 0.3s; }
+#dark-mode-toggle:hover { color: var(--pink-dark); }
+
+/* HERO SECTION */
+.hero { height: 100vh; display: flex; align-items: center; padding: 0 8%; gap: 50px; flex-wrap: wrap; }
+.hero-text { flex: 1; max-width: 600px; }
+.badge { background: var(--pink-accent); color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
+h1 { font-size: 4rem; margin: 20px 0; line-height: 1.1; color: var(--text-main); }
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 500px; /* Batasi lebar visual */
+    min-height: 400px; /* Tinggi minimal */
+}
+.hero-image-main {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: 0.5s ease-in-out;
+}
+.overlay-shape {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 120%; height: 120%; /* Lebih besar dari gambar */
+    background: linear-gradient(45deg, var(--pink-accent), var(--pink-dark));
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Bentuk organik */
+    transform: translate(-50%, -50%) rotate(20deg);
+    opacity: 0.4;
+    filter: blur(50px);
+    animation: morph 6s infinite alternate, pulse 3s infinite alternate;
+    z-index: -1; /* Di belakang gambar */
+}
+@keyframes morph {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    100% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }
+}
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1) rotate(20deg); }
+    100% { transform: translate(-50%, -50%) scale(1.05) rotate(22deg); }
+}
+
+/* BUTTONS */
+.btn-main { background: var(--pink-dark); color: white; padding: 15px 30px; border-radius: 12px; text-decoration: none; display: inline-block; font-weight: bold; box-shadow: var(--shadow); transition: 0.3s; margin-right: 15px; }
+.btn-main:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(240, 98, 146, 0.4); }
+.btn-sub { background: none; border: 2px solid var(--pink-accent); color: var(--text-main); padding: 13px 30px; border-radius: 12px; text-decoration: none; display: inline-block; font-weight: 600; transition: 0.3s; }
+.btn-sub:hover { background: var(--pink-accent); color: white; }
+
+/* SECTIONS */
+.container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+.section-title { font-size: 2.5rem; text-align: center; margin-bottom: 50px; position: relative; color: var(--text-main); }
+.section-title::after { content: ''; display: block; width: 60px; height: 5px; background: var(--pink-dark); margin: 10px auto; border-radius: 10px; }
+
+/* ABOUT & PROGRESS */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.about-info h3, .education h3 { color: var(--pink-dark); margin-bottom: 20px; }
+.bio-list { list-style: none; margin-top: 20px; }
+.bio-list li { margin-bottom: 10px; }
+.edu-card { background: var(--white); padding: 25px; border-radius: 20px; margin-bottom: 15px; box-shadow: var(--shadow); border-left: 5px solid var(--pink-dark); transition: 0.3s; }
+.edu-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(240, 98, 146, 0.25); }
+
+.skill-item { margin-bottom: 20px; }
+.skill-label { display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: 600; }
+.progress-bg { width: 100%; height: 10px; background: var(--white); border-radius: 10px; margin-top: 10px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--pink-dark); width: 0; transition: 1.5s ease-out; border-radius: 10px; }
+
+/* WORK/PROJECTS */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 300px minimum */
+    gap: 40px;
+}
+.work-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+    border: 1px solid var(--pink-light);
+}
+.work-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(240, 98, 146, 0.3);
+}
+.work-thumb {
+    width: 100%;
+    height: 220px; /* Tinggi gambar proyek */
+    background-size: cover;
+    background-position: center;
+    transition: 0.5s ease;
+}
+.work-card:hover .work-thumb { transform: scale(1.1); }
+.work-info { padding: 25px; }
+.work-info h4 { font-size: 1.5rem; color: var(--pink-dark); margin-bottom: 10px; }
+.work-info p { font-size: 0.9rem; line-height: 1.6; color: var(--text-main); }
+.view-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--pink-accent);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+.view-link i { margin-left: 8px; transition: 0.3s; }
+.view-link:hover { color: var(--pink-dark); }
+.view-link:hover i { transform: translateX(5px); }
+
+/* CONTACT SECTION */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.contact-info h3 { font-size: 2rem; color: var(--pink-dark); margin-bottom: 20px; }
+.info-details p { margin-bottom: 15px; font-weight: 600; }
+.info-details i { margin-right: 10px; color: var(--pink-dark); }
+
+.input-box { margin-bottom: 20px; position: relative; }
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5); /* Glassmorphism input */
+    border: 2px solid transparent;
+    border-radius: 12px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: var(--pink-accent);
+    background: var(--white); /* Solid di fokus */
+}
+body.dark-mode #contact-form input:focus,
+body.dark-mode #contact-form textarea:focus { background: #3a1a24; }
+
+
+#contact-form textarea { height: 150px; resize: none; }
+
+/* Styling Pesan Error */
+.error-msg { color: #e74c3c; font-size: 0.8rem; display: block; margin-top: 5px; opacity: 0; transition: 0.3s; }
+.input-box.error .error-msg { opacity: 1; }
+.input-box.error input { border-color: #e74c3c; }
+
+/* FOOTER */
+footer { text-align: center; padding: 40px; background: var(--white); border-top: 1px solid var(--pink-light); color: var(--text-main); }
+footer i { color: var(--pink-dark); margin: 0 5px; }
+
+
+/* RESPONSIVE */
+/* ===================================================
+   1. KODE UNTUK TAMPILAN LAPTOP (DEFAULT)
+   Gunakan kode asli kamu yang tampilannya menyamping
+   =================================================== */
+
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 8%; 
+    /* ... kode laptop lainnya ... */
+}
+
+/* KHUSUS TAMPILAN LAPTOP */
+/* LAPTOP ONLY - AUTO RECTANGLE */
+@media (min-width: 993px) {
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        padding: 0 8%;
+        height: 100vh;
+    }
+
+    .hero-visual {
+        flex: 1;
+        max-width: 550px; /* Batas maksimal lebar foto */
+    }
+
+    .hero-image-main {
+        width: 100%;
+        height: auto; /* Biar tingginya ngikutin foto asli, jadi gak maksa */
+        max-height: 400px; /* Biar gak ketinggian sampe bawah */
+        object-fit: contain; /* Foto asli kelihatan utuh, gak kepotong */
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+    }
+
+    .hero-text {
+        flex: 1;
+        max-width: 550px;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem; 
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+}
+
+/* ===================================================
+   2. KODE KHUSUS HP (MEDIA QUERY)
+   Kode ini HANYA aktif di layar kecil (max 576px)
+   =================================================== */
+
+@media (max-width: 576px) {
+    /* Mencegah layar geser samping */
+    html, body { overflow-x: hidden; width: 100%; }
+
+    /* Navigasi & Logo ke Tengah */
+    nav { 
+        flex-direction: column !important; 
+        text-align: center !important;
+    }
+    .nav-links { 
+        justify-content: center !important; 
+        margin-top: 15px !important;
+    }
+
+    /* Hero: Foto di Atas, Teks di Bawah, Semua Tengah */
+    .hero { 
+        height: auto !important;
+        flex-direction: column !important; /* HP turun ke bawah */
+        padding: 120px 20px 50px 20px !important;
+        text-align: center !important;
+    }
+    .hero-visual { order: 1; margin-bottom: 30px; }
+    .hero-text { order: 2; width: 100%; }
+
+    /* Tombol & Judul ke Tengah */
+    .hero-btns { 
+        flex-direction: column !important; 
+        align-items: center !important; 
+    }
+    .btn-main, .btn-sub { width: 100%; max-width: 280px; margin: 5px 0; }
+
+    /* Grid Karya: Jadi 1 kolom tumpuk ke bawah */
+    .about-grid, .work-grid, .contact-wrapper { 
+        grid-template-columns: 1fr !important; 
+    }
+    
+    /* Loader (Preloader) Tengah */
+    #preloader {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+}
+
+/* Container Modal (Background Hitam Transparan) */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: none; /* Sembunyi secara default */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+}
+
+/* Kotak Putih Modal */
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 25px;
+    position: relative;
+    text-align: center;
+    transform: scale(0.7);
+    transition: 0.3s;
+}
+
+/* Saat Modal Terbuka */
+.modal-overlay.active { display: flex; }
+.modal-overlay.active .modal-content { transform: scale(1); }
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: var(--pink-dark);
+}
+
+.modal-img-preview {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+/* --- PERBAIKAN RESPONSIVE TOTAL --- */
+
+@media (max-width: 992px) {
+    /* Membuat urutan jadi: Gambar dulu baru Teks di bawahnya */
+    .hero { 
+        height: auto; 
+        flex-direction: column !important; 
+        padding: 120px 5% 50px 5%; 
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-text { 
+        flex: none; 
+        max-width: 100%; 
+        order: 2; /* Teks pindah ke bawah */
+    }
+
+    .hero-visual { 
+        flex: none; 
+        width: 100%;
+        max-width: 350px; /* Ukuran gambar di HP agar tidak kebesaran */
+        min-height: auto;
+        order: 1; /* Gambar pindah ke atas */
+        margin: 0 auto;
+    }
+
+    .hero-image-main {
+        max-height: 350px;
+        width: 100%;
+    }
+
+    h1 { 
+        font-size: 2.5rem; /* Mengecilkan ukuran tulisan di HP */
+        line-height: 1.2;
+    }
+
+    .hero-btns {
+        display: flex;
+        flex-direction: column; /* Tombol jadi susun bawah di HP */
+        gap: 15px;
+        align-items: center;
+    }
+
+    .btn-main, .btn-sub {
+        width: 100%; /* Tombol jadi lebar penuh di HP */
+        margin-right: 0;
+    }
+
+    /* Memperbaiki About Section */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    nav { padding: 15px 5%; }
+    .logo { font-size: 1.2rem; }
+}
+
+/* --- KHUSUS HP (Screen lebar 576px kebawah) --- */
+@media (max-width: 576px) {
+    /* Mengetengahkan Area Kontak */
+    .contact-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0 20px !important;
+    }
+
+    #contact-form {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* Mengetengahkan Input & Pesan */
+    .input-box {
+        width: 100% !important;
+        max-width: 320px !important; 
+        margin: 0 auto 15px auto !important;
+    }
+
+    #contact-form input, 
+    #contact-form textarea {
+        text-align: center !important; 
+    }
+
+    /* Mengetengahkan Tombol Kirim Pesan */
+    .btn-main, #contact-form button {
+        margin: 10px auto !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 280px !important;
+    }
+}
+
+/* --- PERBAIKAN KURSOR (Berlaku global tapi aman untuk laptop) --- */
+#cursor-dot, #cursor-outline {
+    position: fixed;
+    pointer-events: none; /* WAJIB: Agar kursor tidak menghalangi klik tombol */
+    transform: translate(-50%, -50%); /* Kunci agar tepat di ujung jari/panah */
+    z-index: 10001;
+}
+
+#cursor-dot, #cursor-outline {
+    position: fixed;
+    pointer-events: none; /* WAJIB: Biar jempol kamu tetap bisa nge-klik tombol */
+    z-index: 10001;
+    transform: translate(-50%, -50%); /* Biar pas di tengah jari */
+}
+
+/* Pastikan di HP tidak hilang */
+@media (max-width: 992px) {
+    #cursor-dot, #cursor-outline {
+        display: block !important;
+    }
+}

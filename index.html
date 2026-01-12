@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTOFOLIO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-circle"></div>
+        <p>MEMUAT KARYA TERBAIK SAYA...</p>
+    </div>
+
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <nav>
+        <div class="logo">MY<span>GALLERY</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">Profil</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#projects">Karya</a></li>
+            <li><a href="#contact">Kontak</a></li> </ul>
+        <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-text">
+            <span class="badge">Selamat Datang di Portofolio Visual Saya</span>
+            <h1 id="typing-name"></h1>
+            <p>Saya seorang kreator yang suka bercerita melalui gambar dan kode. Setiap piksel adalah kanvas untuk ide-ide baru.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-main">Lihat Karya Saya</a>
+                <a href="#profile" class="btn-sub">Kenali Saya Lebih Dekat</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="profil.jpeg" alt="Visualisasi Kreatif" class="hero-image-main">
+            <div class="overlay-shape"></div>
+        </div>
+    </header>
+
+    <section id="profile" class="about">
+        <div class="container">
+            <h2 class="section-title">Informasi Pribadi</h2>
+            <div class="about-grid">
+                <div class="about-info">
+                    <h3>Siapa Saya?</h3>
+                    <p>Nama saya Luthfia Agustina, saat ini saya berdomisili di Barito Kuala. Saya memiliki ketertarikan besar pada dunia visual dan bagaimana sebuah kode bisa membantu mempermudah kehidupan manusia.</p>
+                    <ul class="bio-list">
+                        <li><strong>TTL:</strong> Barito Kuala, 17 Agustus 2006</li>
+                        <li><strong>Hobi:</strong> Desain Grafis, Fotografi, Coding, Shopping</li>
+                        <li><strong>Status:</strong> Mahasiswa</li>
+                    </ul>
+                </div>
+                <div class="education">
+                    <h3>Riwayat Pendidikan</h3>
+                    <div class="edu-card">
+                        <span class="year">2024 - Sekarang</span>
+                        <h4>UNISKA MAB Banjarmasin</h4>
+                        <p>Mempelajari dasar-dasar pengembangan web, desain interface, dan lainnya.</p>
+                    </div>
+                    <div class="edu-card">
+                        <span class="year">2021 - 2024</span>
+                        <h4>SMK Negeri 2 Marabahan</h4>
+                        <p>Lulus dengan minat kuat pada mata pelajaran Teknik Informatika.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Apa yang Saya Bisa?</h2>
+            <div class="skill-grid">
+                <div class="skill-item">
+                    <div class="skill-label"><span>Desain UI/UX</span><span>80%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" data-percent="80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label"><span>HTML & CSS</span><span>90%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" data-percent="90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label"><span>JavaScript</span><span>75%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" data-percent="75%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="work">
+        <div class="container">
+            <h2 class="section-title">Galeri Karya Visual</h2>
+            <div class="work-grid">
+                <div class="work-card">
+                    <div class="work-thumb" style="background-image: url('website.png');"></div>
+                    <div class="work-info">
+                        <h4>Website Portofolio</h4>
+                        <p>Desain dan pengembangan untuk platform pribadi</p>
+                        <a href="#" class="view-link">Lihat Proyek <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-thumb" style="background-image: url('alam.png');"></div>
+                    <div class="work-info">
+                        <h4>Fotografi Alam</h4>
+                        <p>Kumpulan hasil jepretan lanskap dan alam bebas</p>
+                        <a href="#" class="view-link">Lihat Proyek <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-thumb" style="background-image: url('desain.png');"></div>
+                    <div class="work-info">
+                        <h4>Desain Aplikasi LitSkincare</h4>
+                        <p>Desain antarmuka aplikasi secara mendetail menggunakan software Figma</p>
+                        <a href="#" class="view-link">Lihat Proyek <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Saya</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Mari Berdiskusi!</h3>
+                    <p>Saya selalu terbuka untuk kolaborasi atau sekadar menyapa. Silakan isi form di samping!</p>
+                    <div class="info-details">
+                        <p><i class="fas fa-envelope"></i> luthfia17agt@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Barito Kuala, Indonesia</p>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="glass-card">
+                    <div class="input-box">
+                        <input type="text" id="name" placeholder="Nama Lengkap">
+                        <small class="error-msg"></small>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" id="email" placeholder="Alamat Email">
+                        <small class="error-msg"></small>
+                    </div>
+                    <div class="input-box">
+                        <textarea id="message" placeholder="Pesan Anda..."></textarea>
+                        <small class="error-msg"></small>
+                    </div>
+                    <button type="submit" class="btn-main">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Luthfia Agustina. Dibuat dengan <i class="fas fa-heart"></i> dan Dedikasi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
